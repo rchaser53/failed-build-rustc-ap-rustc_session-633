@@ -1,0 +1,18 @@
+language: rust
+cache: cargo
+
+matrix:
+  include:
+    - os: linux
+      rust: nightly
+
+script:
+  - rustup update nightly --force
+  - cargo run
+
+branches:
+  only:
+    - master
+
+notifications:
+  email: false
